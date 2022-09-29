@@ -152,7 +152,12 @@ const SideBar = () => {
       "page-error-404",
       "page-error-500",
       "page-error-503",
-    ];
+    ],
+    course = ["approve-course", "list-course"],
+    mentee = ["list-mentee"],
+    mentor = ["approve-mentor", "list-mentor"],
+    blog = ["approve-blog", "list-blog"];
+
   return (
     <div
       className={`deznav ${iconHover} ${
@@ -191,7 +196,7 @@ const SideBar = () => {
                 </Link>
               </li>
 
-              <li>
+              {/* <li>
                 <Link
                   className={`${path === "guest-list" ? "mm-active" : ""}`}
                   to="/guest-list"
@@ -238,10 +243,10 @@ const SideBar = () => {
                 >
                   Task
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </li>
-          <li className={`${app.includes(path) ? "mm-active" : ""}`}>
+          {/* <li className={`${app.includes(path) ? "mm-active" : ""}`}>
             <Link className="has-arrow ai-icon" to="#">
               <i className="flaticon-050-info"></i>
               <span className="nav-text">Apps</span>
@@ -839,14 +844,111 @@ const SideBar = () => {
                 </Link>
               </li>
             </ul>
+          </li> */}
+          <li className={`${course.includes(path) ? "mm-active" : ""}`}>
+            <Link className="has-arrow ai-icon" to="#">
+              <i className="flaticon-381-notebook"></i>
+              <span className="nav-text">Course</span>
+            </Link>
+            <ul>
+              <li>
+                <Link
+                  className={`${path === "approve-course" ? "mm-active" : ""}`}
+                  to="/approve-course"
+                >
+                  Approve Course
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={`${path === "list-course" ? "mm-active" : ""}`}
+                  to="/list-course"
+                >
+                  List Course
+                </Link>
+              </li>
+            </ul>
+          </li>
+          <li className={`${mentor.includes(path) ? "mm-active" : ""}`}>
+            <Link className="has-arrow ai-icon" to="#">
+              <i className="flaticon-381-user-8"></i>
+              <span className="nav-text">Mentor</span>
+            </Link>
+            <ul>
+              <li className={`${blog.includes(path) ? "mm-active" : ""}`}>
+                <Link className="has-arrow" to="#">
+                  Blog
+                </Link>
+                <ul>
+                  <li>
+                    <Link
+                      className={`${
+                        path === "approve-blog" ? "mm-active" : ""
+                      }`}
+                      to="/approve-blog"
+                    >
+                      Approve Blog
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className={`${path === "list-blog" ? "mm-active" : ""}`}
+                      to="/list-blog"
+                    >
+                      List Blog
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <Link
+                  className={`${path === "approve-mentor" ? "mm-active" : ""}`}
+                  to="/approve-mentor"
+                >
+                  Approve Mentor
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={`${path === "list-mentor" ? "mm-active" : ""}`}
+                  to="/list-mentor"
+                >
+                  List Mentor
+                </Link>
+              </li>
+            </ul>
+          </li>
+          <li className={`${mentee.includes(path) ? "mm-active" : ""}`}>
+            <Link className="has-arrow ai-icon" to="#">
+              <i className="flaticon-381-user-7"></i>
+              <span className="nav-text">Mentee</span>
+            </Link>
+            <ul>
+              <li>
+                <Link
+                  className={`${path === "approve-mentee" ? "mm-active" : ""}`}
+                  to="/approve-mentee"
+                >
+                  Approve Mentee
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={`${path === "list-mentee" ? "mm-active" : ""}`}
+                  to="/list-mentee"
+                >
+                  List Mentee
+                </Link>
+              </li>
+            </ul>
           </li>
         </MM>
         <div className="copyright">
           <p>
-            <strong>Innap Hotel Admin</strong> © 2021 All Rights Reserved
+            <strong>Edu2gether Admin</strong> © 2022 All Rights Reserved
           </p>
           <p className="fs-12">
-            Made with <span className="heart"></span> by DexignZone
+            Made with <span className="heart"></span> by ldgiaminh
           </p>
         </div>
       </PerfectScrollbar>
